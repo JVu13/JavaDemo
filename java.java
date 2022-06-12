@@ -1,24 +1,30 @@
 package Java_Demo;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class java {
     public static void main(String[] args) {
-        Area four_corners = new Area();
+        Area[] rectangles = new Area[3]; //null,null,null
 
-        float length;
-        float width;
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < rectangles.length; i++) {
+            System.out.println(
+                "Do you want to enter the length and width?: ");
 
-        System.out.println("Printing Area Program");
+            char choice = input.next().charAt(0); // y/n
+            if (choice == 'y')
+                rectangles[i] = new Area(input.nextDouble(), input.nextDouble());
+            else
+                rectangles[i] = new Area();
+        }
 
-        Scanner my_input = new Scanner(System.in);
-        System.out.println("Enter Length and Width");
-        
-        length = my_input.nextFloat();
-        width = my_input.nextFloat();
-
-        four_corners.setDim(length, width);
-        System.out.println("Length: " + length + " Width: " + width);
-        System.out.println("The area is: " + four_corners.getArea());
-        my_input.close();
+        System.out.println("The rectangles are:");
+        for(int i = 0; i < rectangles.length; i++) {
+            System.out.println(
+                "Rectangle " + (i+1) + 
+                ": Length: " + rectangles[i].getLength() + 
+                " : Width: " + rectangles[i].getWidth());
+        }
     }
 }
