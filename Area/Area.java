@@ -1,4 +1,4 @@
-package Java_Demo;
+package Java_Demo.Area;
 
 public class Area {
     private double length;

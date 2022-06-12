@@ -1,7 +1,5 @@
-package Java_Demo;
+package Java_Demo.Area;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner6;
 
 public class java {
     public static void main(String[] args) {
